@@ -1,5 +1,5 @@
-import reactImg from "./assets/react-core-concepts.png"
-import componentsImage from "./assets/components.png"
+import reactImg from "./assets/react-core-concepts.png";
+import { CORE_CONCEPTS } from "./data";
 
 const reactDescriptions = ["Fundamental", "Crucial", "Core"];
 
@@ -40,13 +40,14 @@ function App() {
           <h2>Core Concepts</h2>
           <ul>
             <CoreConcept 
-              title="Components"
-              description="The core UI building block"
-              image={componentsImage}
+              title={CORE_CONCEPTS[0].title}
+              description={CORE_CONCEPTS[0].description}
+              image={CORE_CONCEPTS[0].image}
               />
-            <CoreConcept />
-            <CoreConcept />
-            <CoreConcept />
+              {/* shorter version of above. uses spread op, brings in the whole object */}
+            <CoreConcept {...CORE_CONCEPTS[1]} />
+            <CoreConcept {...CORE_CONCEPTS[2]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
           </section>  
         </main>
