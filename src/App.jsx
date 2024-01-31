@@ -7,7 +7,7 @@ import TabButton from "./components/TabButton";
 
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState("components");
+  const [selectedTopic, setSelectedTopic] = useState();
 
   function handleSelect(selectedButton) {
     //components, jsx, props, state
@@ -37,22 +37,24 @@ function App() {
             <h2>Examples</h2>
             <menu>
               {/* Anony arrow func passed as a value */}
-              {/* Ensures handleSelect not executed until clicked */}
               {/* Allows for controlling exec, passing args, etc */}
               <TabButton onSelect={() => handleSelect("components")}>Components</TabButton>
               <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
               <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
               <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
+              {/* if no topic selected, display <p>, otherwise display the <div> */}
             </menu>
-            <div id="tab-content">
-              <h3>{EXAMPLES[selectedTopic].title}</h3>
-              <p>{EXAMPLES[selectedTopic].description}</p>
-                <pre>
-                  <code>
-                  {EXAMPLES[selectedTopic].code}
-                  </code>
-                </pre>
-            </div>
+              {!selectedTopic ? <p>Please Select a Topic</p> :
+                  <div id="tab-content">
+                    <h3>{EXAMPLES[selectedTopic].title}</h3>
+                    <p>{EXAMPLES[selectedTopic].description}</p>
+                      <pre>
+                        <code>
+                        {EXAMPLES[selectedTopic].code}
+                        </code>
+                      </pre>
+                  </div>
+              }    
           </section>
         </main>
     </div>
