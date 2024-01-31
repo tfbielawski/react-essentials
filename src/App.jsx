@@ -51,10 +51,27 @@ function App() {
             <menu>
               {/* Anony arrow func passed as a value */}
               {/* Allows for controlling exec, passing args, etc */}
-              <TabButton onSelect={() => handleSelect("components")}>Components</TabButton>
-              <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
-              <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
-              <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
+              <TabButton 
+                // If selectedTop === component, send true back to tabButton.jsx
+                isSelected={selectedTopic === "components"} 
+                onSelect={() => handleSelect("components")}
+              >Components
+              </TabButton>
+              <TabButton
+                isSelected={selectedTopic === "jsx"} 
+                onSelect={() => handleSelect("jsx")}
+              >JSX
+              </TabButton>
+              <TabButton 
+                isSelected={selectedTopic === "props"}
+                onSelect={() => handleSelect("props")}
+              >Props
+              </TabButton>
+              <TabButton 
+                isSelected={selectedTopic === "state"}
+                onSelect={() => handleSelect("state")}
+              >State
+              </TabButton>
             </menu>
             {/* I prefer this over below condition--more concise. 
                 Keeping as a reference.*/}
