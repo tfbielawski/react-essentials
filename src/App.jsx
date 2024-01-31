@@ -15,6 +15,19 @@ function App() {
     console.log(selectedTopic);    
 }
 
+  let tabContent =<p>Please Select a Topic</p>;
+  if (selectedTopic){
+    tabContent = (
+    <div id="tab-content">
+      <h3>{EXAMPLES[selectedTopic].title}</h3>
+      <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>
+          {EXAMPLES[selectedTopic].code}
+          </code>
+        </pre>
+    </div>
+  )}
   return (
     <div>
       <Header />      
@@ -42,9 +55,12 @@ function App() {
               <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
               <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
               <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
-              {/* if no topic selected, display <p>, otherwise display the <div> */}
             </menu>
-              {!selectedTopic ? <p>Please Select a Topic</p> :
+            {/* I prefer this over below condition--more concise. 
+                Keeping as a reference.*/}
+            {tabContent}
+            {/* if no topic selected, display <p>, otherwise display the <div> */}
+              {/* {!selectedTopic ? <p>Please Select a Topic</p> :
                   <div id="tab-content">
                     <h3>{EXAMPLES[selectedTopic].title}</h3>
                     <p>{EXAMPLES[selectedTopic].description}</p>
@@ -54,7 +70,7 @@ function App() {
                         </code>
                       </pre>
                   </div>
-              }    
+              }     */}
           </section>
         </main>
     </div>
