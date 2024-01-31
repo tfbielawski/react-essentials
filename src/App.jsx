@@ -55,22 +55,26 @@ function App() {
                 // If selectedTop === component, send true back to tabButton.jsx
                 isSelected={selectedTopic === "components"} 
                 onSelect={() => handleSelect("components")}
-              >Components
+              >
+                Components
               </TabButton>
               <TabButton
                 isSelected={selectedTopic === "jsx"} 
                 onSelect={() => handleSelect("jsx")}
-              >JSX
+              >
+                JSX
               </TabButton>
               <TabButton 
                 isSelected={selectedTopic === "props"}
                 onSelect={() => handleSelect("props")}
-              >Props
+              >
+                Props
               </TabButton>
               <TabButton 
                 isSelected={selectedTopic === "state"}
                 onSelect={() => handleSelect("state")}
-              >State
+              >
+                State
               </TabButton>
             </menu>
             {/* I prefer this over below condition--more concise. 
