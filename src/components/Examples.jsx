@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { EXAMPLES } from "../data";
 import TabButton from "./TabButton"
+import Section from "./Section";
 
 export default function Examples(){
     const [selectedTopic, setSelectedTopic] = useState();
@@ -25,37 +26,39 @@ export default function Examples(){
         </div>
     )}
 
-    <section id="examples">
+    return(
+        <Section id="examples">
             <h2>Examples</h2>
             <menu>
-              {/* Anony arrow func passed as a value */}
-              {/* Allows for controlling exec, passing args, etc */}
-              <TabButton 
+            {/* Anony arrow func passed as a value */}
+            {/* Allows for controlling exec, passing args, etc */}
+            <TabButton 
                 // If selectedTop === component, send true back to tabButton.jsx
                 isSelected={selectedTopic === "components"} 
                 onSelect={() => handleSelect("components")}
-              >
+            >
                 Components
-              </TabButton>
-              <TabButton
+            </TabButton>
+            <TabButton
                 isSelected={selectedTopic === "jsx"} 
                 onSelect={() => handleSelect("jsx")}
-              >
+            >
                 JSX
-              </TabButton>
-              <TabButton 
+            </TabButton>
+            <TabButton 
                 isSelected={selectedTopic === "props"}
                 onSelect={() => handleSelect("props")}
-              >
+            >
                 Props
-              </TabButton>
-              <TabButton 
+            </TabButton>
+            <TabButton 
                 isSelected={selectedTopic === "state"}
                 onSelect={() => handleSelect("state")}
-              >
+            >
                 State
-              </TabButton>
+            </TabButton>
             </menu>
             {tabContent}
-          </section>
+        </Section>
+    )
 }
