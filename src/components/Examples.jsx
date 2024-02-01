@@ -28,7 +28,6 @@ export default function Examples(){
 
     return(
         <Section id="examples">
-            <h2>Examples</h2>
             <menu>
             {/* Anony arrow func passed as a value */}
             {/* Allows for controlling exec, passing args, etc */}
