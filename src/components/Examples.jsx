@@ -56,20 +56,6 @@ export default function Examples(){
                 State
               </TabButton>
             </menu>
-            {/* I prefer this over below condition--more concise. 
-                Keeping as a reference.*/}
             {tabContent}
-            {/* if no topic selected, display <p>, otherwise display the <div> */}
-              {/* {!selectedTopic ? <p>Please Select a Topic</p> :
-                  <div id="tab-content">
-                    <h3>{EXAMPLES[selectedTopic].title}</h3>
-                    <p>{EXAMPLES[selectedTopic].description}</p>
-                      <pre>
-                        <code>
-                        {EXAMPLES[selectedTopic].code}
-                        </code>
-                      </pre>
-                  </div>
-              }     */}
           </section>
 }
